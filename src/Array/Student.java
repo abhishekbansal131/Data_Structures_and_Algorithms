@@ -10,7 +10,6 @@ class Student
 }
 // create constructor or getter and setter methods as per need*/
 
-import java.net.Socket;
 import java.util.Scanner;
 
 class Student{
@@ -52,7 +51,7 @@ class Student{
                 System.out.println(i.rollno +" "+ i.marks +" "+ i.name);
             }
             if(i.marks==min){
-                System.out.println("Student who got highest marks details are given below");
+                System.out.println("Student who got lowest marks details are given below");
                 System.out.println(i.rollno +" "+ i.marks +" "+ i.name);
             }
         }
