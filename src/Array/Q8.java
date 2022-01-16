@@ -15,16 +15,11 @@ public class Q8 {
         int m = sc.nextInt();
         int n = sc.nextInt();
         int[][] arr = new int[m][n];
+        ArrayList<Integer> a1 = new ArrayList<>();
+        ArrayList<Integer> a2 = new ArrayList<>();
         for(int i=0; i<m; i++){
             for(int j=0; j<n; j++){
                 arr[i][j] = sc.nextInt();
-            }
-        }
-        ArrayList<Integer> a1 = new ArrayList<>();
-        ArrayList<Integer> a2 = new ArrayList<>();
-
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
                 if(arr[i][j]%2==0){
                     a1.add(arr[i][j]);
                 }
@@ -32,6 +27,8 @@ public class Q8 {
                     a2.add(arr[i][j]);
             }
         }
+
+
 
         System.out.println("Even elements array " + a1);
         System.out.println("Odd elements array " + a2);
