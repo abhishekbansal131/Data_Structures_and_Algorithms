@@ -16,13 +16,18 @@ public class Q9 {
         for(int i=0; i<n; i++){
             arr[i] = sc.nextInt();
         }
+        int c=0;
         System.out.println("pair of numbers in the array whose product is odd are");
         for (int i=0; i<n; i++) {
-            for (int j=i+1; j<n ; j++) {
-                if((arr[i]*arr[j])%2==1){
-                    System.out.println("(" + arr[i] + "," + arr[j] + ")");
+            for (int j=0; j<n ; j++) {
+                if(i!=j) {
+                    if ((arr[i] * arr[j]) % 2 == 1) {
+                        System.out.println("(" + arr[i] + "," + arr[j] + ")");
+                        c++;
+                    }
                 }
             }
+            System.out.println("No. of pairs whose product is odd are " + c);
 
         }
     }
