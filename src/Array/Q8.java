@@ -28,7 +28,7 @@ public class Q8 {
             }
         }
 
-        System.out.println("Even elements array " + a1);
-        System.out.println("Odd elements array " + a2);
+        System.out.println("Even elements array are " + a1);
+        System.out.println("Odd elements array are " + a2);
     }
 }
