@@ -18,20 +18,31 @@ public class Q7 {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number");
         int n = sc.nextInt();
-        int fac=1,c=0;
-        for(int i=1; i<=n; i++){
-            fac*=i;
-        }
-        while(fac!=0){
-            int rem = fac%10;
-            if(rem == 0){
-                c++;
-            }
-            else{
-                break;
-            }
-            fac/=10;
+
+//        int fac=1,c=0;
+//        for(int i=1; i<=n; i++){
+//            fac*=i;
+//        }
+//        while(fac!=0){
+//            int rem = fac%10;
+//            if(rem == 0){
+//                c++;
+//            }
+//            else{
+//                break;
+//            }
+//            fac/=10;
+//        }
+
+//      In the Above logic time complexity is O(NLogN).....
+
+        int c=0;
+        while(n!=0){
+            n = n/5;
+            c+=n;
         }
         System.out.println("No. of trailing zeroes are " + c);
+
+//      In this logic, Time Complexity is less i.e. O(logN)
     }
 }
