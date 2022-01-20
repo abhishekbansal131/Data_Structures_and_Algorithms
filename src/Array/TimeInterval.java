@@ -7,28 +7,31 @@ if there are any clashes between time or not. If there are clashes it means the 
 management to find it out
  */
 
+import java.util.Arrays;
 import java.util.Scanner;
 
+
+
 public class TimeInterval {
-    int start;
-    int end;
+    int start,end;
 
-    public TimeInterval(int start, int end) {
-        this.start = start;
-        this.end = end;
+    public TimeInterval(int start,int end) {
+        this.start=start;
+        this.end=end;
     }
-    TimeInterval(){}
 
-    public boolean canAttendMeeting(TimeInterval[] tlarr) {
-        for(int i=0; i<tlarr.length; i++){
-            for(int j=tlarr[i].start; j<tlarr[i].end; j++){
-                for(int k=0; k<tlarr.length; k++){
-                    if(i!=k) {
-                        if (tlarr[k].start == j) {
-                            return false;
-                        }
-                    }
-                }
+    public static boolean canAttendMeeting(TimeInterval[] arr){
+        int[] start = new int[arr.length];
+        int[] end = new int[arr.length];
+        for(int i=0; i< arr.length; i++){
+            start[i] = arr[i].start;
+            end[i] = arr[i].end;
+        }
+        Arrays.sort(start);
+        Arrays.sort(end);
+        for(int i=0; i<start.length-1; i++){
+            if(start[i+1]<end[i]){
+                return false;
             }
         }
         return true;
@@ -36,14 +39,14 @@ public class TimeInterval {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the number of meetings in the array so that we can set time interval according to that");
+        System.out.println("Enter the number of dept.");
         int n = sc.nextInt();
         TimeInterval[] arr = new TimeInterval[n];
-        System.out.println("Enter the starting and ending time of each meeting");
+        System.out.println("Enter the starting and ending time of each dept. meeting");
         for(int i=0; i<arr.length; i++){
             arr[i] = new TimeInterval(sc.nextInt(),sc.nextInt());
         }
-        if(new TimeInterval().canAttendMeeting(arr)){
+        if(TimeInterval.canAttendMeeting(arr)){
             System.out.println("Employee can attend all the meetings without any clash");
         }
         else {
