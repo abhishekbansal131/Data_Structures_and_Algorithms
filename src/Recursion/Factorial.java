@@ -15,11 +15,12 @@ public class Factorial {
 
     // Using Tail Recursion
 
-    public static int fac(int n, int sum){
+    public static void fac(int n, int sum){
         if(n==0 || n==1){
-            return sum;
+            System.out.println(sum);
+            return;
         }
-        return fac(n-1,sum*n);
+        fac(n-1,sum*n);
     }
 
     public static void main(String[] args) {
@@ -27,6 +28,6 @@ public class Factorial {
         System.out.println("Enter the value");
         int n = sc.nextInt();
 //      System.out.println(fac(n));  // For head recursion
-        System.out.println(fac(n,1));
+        fac(n,1);
     }
 }
