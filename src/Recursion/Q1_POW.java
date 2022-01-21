@@ -16,11 +16,8 @@ import java.util.Scanner;
 
 public class Q1_POW {
     public static int power(int val , int p){
-        if(p==0)
-            return 1;
-        else
-            p--;
-            return val*power(val,p);
+        if(p==0) return 1;
+        return val*power(val,p-1);
     }
 
     public static void main(String[] args) {
