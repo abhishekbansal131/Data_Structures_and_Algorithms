@@ -8,7 +8,7 @@ The prototype of the method is as follows:-
 
 public static int[] res(int arr[], int current index, int search_value)
 {
-	// set of statements;
+	// set of statement;
 }
 */
 
