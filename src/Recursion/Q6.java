@@ -16,16 +16,16 @@ import java.util.Scanner;
 
 public class Q6 {
 
-    public static void find(int[] arr, int currentIndex, int search_value){
+    public static int find(int[] arr, int currentIndex, int search_value){
         if(currentIndex<arr.length) {
             if (arr[currentIndex] == search_value) {
                 System.out.println(currentIndex);
             }
-            find(arr,currentIndex+1,search_value);
         }
         else {
-            System.out.println("Value not found");
+            return arr.length;
         }
+        return find(arr,currentIndex+1,search_value);
     }
 
     public static void main(String[] args) {
@@ -39,6 +39,10 @@ public class Q6 {
         }
         System.out.println("Enter the value you want to search");
         int value = sc.nextInt();
-        find(arr,0,value);
+        if (find(arr, 0, value) == arr.length) {
+            System.out.println("Value not found");
+            return;
+        }
+        System.out.println(find(arr, 0, value));
     }
 }
