@@ -9,7 +9,7 @@ public class Subsequence_in_string {
             return;
         }
         subseq(s.substring(1),res+s.charAt(0));
-        subseq(s.substring(1),res + "");
+        subseq(s.substring(1),res);
     }
 
     public static void main(String[] args) {
