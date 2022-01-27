@@ -16,6 +16,7 @@ public class Subsequence_in_string {
         Scanner sc = new Scanner(System.in);
         System.out.println("ENTER THE STRING");
         String s = sc.next();
+        System.out.println(" ");
         subseq(s,"");
     }
 }
