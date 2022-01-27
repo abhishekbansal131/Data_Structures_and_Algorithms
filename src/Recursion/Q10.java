@@ -38,6 +38,7 @@ public class Q10 {
     public static void main(String[] args) {
         Scanner s=new Scanner(System.in);
         String str=s.next();
-        System.out.println(Seq(str));
+        if(str.charAt(0)=='a') System.out.println(Seq(str));
+        else System.out.println("false");
     }
 }
