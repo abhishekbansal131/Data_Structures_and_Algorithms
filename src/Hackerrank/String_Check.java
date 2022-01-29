@@ -4,7 +4,7 @@ package Hackerrank;
  Help her recognize it by writing a code. You can ignore cases i.e no case-sensitivity required.
  */
 
-import java.util.ArrayList;
+
 import java.util.Scanner;
 
 public class String_Check {
@@ -19,7 +19,5 @@ public class String_Check {
         }
         if(c==26) System.out.println("Yes");
         else System.out.println("No");
-        ArrayList a = new ArrayList();
-
     }
 }
