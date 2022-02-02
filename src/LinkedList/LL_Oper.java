@@ -42,12 +42,15 @@ public class LL_Oper {
     }
 
     public void insert_at_any(Node1 n, int pos){
-        Node1 temp = head;
-        for(int i=0; i<pos-2; i++){
-            temp = temp.next;
+        if(pos==1) insert_at_begin(n);
+        else {
+            Node1 temp = head;
+            for (int i = 0; i < pos - 2; i++) {
+                temp = temp.next;
+            }
+            n.next = temp.next;
+            temp.next = n;
         }
-        n.next = temp.next;
-        temp.next = n;
     }
 
 
@@ -71,11 +74,14 @@ public class LL_Oper {
     }
 
     public void delete_from_any(int pos){
-        Node1 temp = head;
-        for(int i=0; i<pos-2; i++){
-            temp = temp.next;
+        if(pos==1) delete_from_begin();
+        else {
+            Node1 temp = head;
+            for (int i = 0; i < pos - 2; i++) {
+                temp = temp.next;
+            }
+            temp.next = temp.next.next;
         }
-        temp.next = temp.next.next;
     }
 
     public void display(){
@@ -87,7 +93,6 @@ public class LL_Oper {
                 temp = temp.next;
             }
         }
-
     }
 
     public static void main(String[] args) {
