@@ -94,6 +94,10 @@ public class LL_Oper {
             }
         }
     }
+    public int count(Node1 temp, int c){
+        if(temp==null) return c;
+        return count(temp.next, c+1);
+    }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -103,7 +107,7 @@ public class LL_Oper {
             System.out.println("""
                     PRESS 1 FOR INSERTION AT BEGIN, 2 FOR INSERTION AT END AND 3 FOR INSERTION AT ANY SPECIFIC POSITION.
                     PRESS 4 FOR DELETION FROM BEGIN, 5 FOR DELETION AT END AND 6 FOR DELETION FOR ANY SPECIFIC POSITION.
-                    press 7 for exit""");
+                    press 7 for SHOWING NUMBER OF NODES AND 8 FOR EXIT""");
             int choice = sc.nextInt();
             if(choice==1){
                 System.out.println("What value do you want to insert?\nEnter the value");
@@ -129,7 +133,8 @@ public class LL_Oper {
                 int p = sc.nextInt();
                 obj.delete_from_any(p);
             }
-            else if(choice==7){
+            else if(choice==7) System.out.println("No. of nodes are" + obj.count(obj.head, 0));
+            else if(choice==8){
                 System.out.println("Thank you");
                 break;
             }
