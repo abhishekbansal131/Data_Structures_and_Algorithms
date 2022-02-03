@@ -133,7 +133,7 @@ public class LL_Oper {
                 int p = sc.nextInt();
                 obj.delete_from_any(p);
             }
-            else if(choice==7) System.out.println("No. of nodes are" + obj.count(obj.head, 0));
+            else if(choice==7) System.out.println("Total No. of Nodes are" + obj.count(obj.head, 0));
             else if(choice==8){
                 System.out.println("Thank you");
                 break;
