@@ -49,28 +49,37 @@ public class DoublyLikedList {
         }
     }
     public void delete_from_begin(){
-        head.next.pre = null;
-        head = head.next;
+        if(head==null) System.out.println("Empty Linked List");
+        else {
+            head.next.pre = null;
+            head = head.next;
+        }
     }
 
     public void delete_from_end(){
-        Node2 temp = head;
-        while(temp.next != null){
-            temp = temp.next;
-            if(temp.next.next==null) break;
+        if(head==null) System.out.println("Empty linked list");
+        else {
+            Node2 temp = head;
+            while (temp.next != null) {
+                temp = temp.next;
+                if (temp.next.next == null) break;
+            }
+            if (temp == head) head = null;  //IF THERE IS ONLY SINGLE NODE IN THE LINKED LIST
+            else temp.next = null;
         }
-
-        temp.next =null;
     }
     public void delete_from_any(int pos){
-        if(pos==1) delete_from_begin();
-        else{
-            Node2 temp = head;
-            for(int i=0; i<pos-2; i++){
-                temp = temp.next;
+        if(head==null) System.out.println("Empty Linked List");
+        else {
+            if (pos == 1) delete_from_begin();
+            else {
+                Node2 temp = head;
+                for (int i = 0; i < pos - 2; i++) {
+                    temp = temp.next;
+                }
+                temp.next.pre = temp;
+                temp.next = temp.next.next;
             }
-            temp.next.pre = temp;
-            temp.next = temp.next.next;
         }
     }
 
