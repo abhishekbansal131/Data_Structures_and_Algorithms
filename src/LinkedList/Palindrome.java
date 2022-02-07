@@ -12,9 +12,9 @@ class Node9<T>{
 }
 public class Palindrome {
     Node9<Integer> head;
+    ArrayList<Node9<Integer>> a = new ArrayList<>();
     public void creatLinkedlist(){
         Scanner sc = new Scanner(System.in);
-        ArrayList<Node9<Integer>> a = new ArrayList<>();
         int i=0;
         while(true){
             int data = sc.nextInt();
@@ -25,15 +25,7 @@ public class Palindrome {
         }
         if(a.size()!=0) head = a.get(0);
     }
-    public ArrayList<Integer> rev(){
-        ArrayList<Integer> a = new ArrayList<>();
-        Node9<Integer> temp = head;
-        while(temp != null){
-            a.add(temp.data);
-            temp = temp.next;
-        }
-        return a;
-    }
+
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -42,8 +34,8 @@ public class Palindrome {
             Palindrome obj1 = new Palindrome();
             obj1.creatLinkedlist();
             int flag=0;
-            for(int i=0; i<obj1.rev().size()/2; i++){
-                if(obj1.rev().get(i)==obj1.rev().get(obj1.rev().size()-i-1)) flag=1;
+            for(int i=0; i<obj1.a.size()/2; i++){
+                if(obj1.a.get(i).data==obj1.a.get(obj1.a.size()-i-1).data) flag=1;
                 else{
                     flag = 0;
                     break;
