@@ -38,16 +38,5 @@ public class StackByDLL {
             }
         }
     }
-    public static void main(String[] args) {
-        StackByDLL obj = new StackByDLL();
-        obj.push(20);
-        obj.push(40);
-//        obj.push(60);
-//        obj.push(80);
-//        obj.pop();
-//        obj.pop();
-//        obj.pop();
-//        obj.pop();
-        obj.display();
-    }
+
 }
