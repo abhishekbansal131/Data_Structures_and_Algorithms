@@ -26,14 +26,18 @@ public class Reverse {
         if(a.size()!=0) head = a.get(0);
     }
     public void rev(){
-        Node10<Integer> temp = head;
-        ArrayList<Integer> a = new ArrayList<>();
-        while(temp!=null){
-            a.add(temp.data);
-            temp = temp.next;
+        Node10<Integer> temp = head, prev = null, n;
+        while(temp != null){
+            n = temp.next;
+            temp.next = prev;
+            prev = temp;
+            temp = n;
         }
-        for(int i=a.size()-1; i>=0; i--){
-            System.out.println(a.get(i));
+        head = prev;
+        Node10<Integer> t = head;
+        while (t!=null){
+            System.out.println(t.data);
+            t = t.next;
         }
     }
 
