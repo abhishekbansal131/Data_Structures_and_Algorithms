@@ -30,7 +30,7 @@ public class StackByArray {
     public void traverse(){
         if(isEmpty()) System.out.println("Stack is Empty");
         else {
-            for (int i = 0; i <= top; i++) {
+            for (int i = top; i >= 0; i--) {
                 System.out.println(arr[i]);
             }
         }
