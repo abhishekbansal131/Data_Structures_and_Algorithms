@@ -4,18 +4,13 @@ import java.util.Scanner;
 class Nodeee {
     String No;
     Nodeee next;
+    Nodeee(String No){
+        this.No = No;
+    }
 }
 class LinkedList1 {
     Nodeee head;
-
-    public void insert(String[] arr) {
-        for (String data : arr) {
-
-
-            Nodeee n = new Nodeee();
-            n.No = data;
-            n.next = null;
-
+    public void insert(Nodeee n) {
             if (head == null) {
                 head = n;
             } else {
@@ -26,7 +21,7 @@ class LinkedList1 {
                 i.next = n;
             }
         }
-    }
+
     public void traversed()
     {
         Nodeee n = head;
@@ -58,7 +53,7 @@ class LinkedList1 {
                 }
             }
         }
-        obj.insert(arr);
+        for(String i : arr) obj.insert(new Nodeee(i));
         obj.traversed();
     }
 }
