@@ -11,28 +11,27 @@ class Node{
     }
 }
 public class LinearQueueByLinkedList {
-    Node head;
+    Node front, rear;
     public boolean isEmpty(){
-        return head == null;
+        return front == null && rear == null;
     }
     public void enqueue(Node n){
-        if(isEmpty()) head = n;
+        if(isEmpty()) front = rear = n;
         else{
-            Node temp = head;
-            while(temp.next != null) temp = temp.next;
-            temp.next = n;
+            rear.next = n;
+            rear = n;
         }
     }
     public void dequeue(){
         if(isEmpty()) System.out.println("Queue is empty");
         else {
-            head = head.next;
+            front = front.next;
         }
     }
     public void display(){
         if(isEmpty()) System.out.println("Queue is empty");
         else {
-            Node temp = head;
+            Node temp = front;
             while (temp != null){
                 System.out.println(temp.data);
                 temp = temp.next;
