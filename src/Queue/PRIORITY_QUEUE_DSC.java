@@ -1,17 +1,17 @@
 package Queue;
 
-class Nodeiii{
-    int data, priority;
-    Nodeiii next;
+class Nodeiii<T>{
+    T data, priority;
+    Nodeiii<T> next;
 
-    public Nodeiii(int data, int priority) {
+    public Nodeiii(T data, T priority) {
         this.data = data;
         this.priority = priority;
     }
 }
 public class PRIORITY_QUEUE_DSC {
-    Nodeiii front, rear;
-    public void enqueue(Nodeiii n){
+    Nodeiii<Integer> front, rear;
+    public void enqueue(Nodeiii<Integer> n){
         if(front == null){
             front = rear = n;
         }
@@ -25,7 +25,7 @@ public class PRIORITY_QUEUE_DSC {
                 front = n;
             }
             else {
-                Nodeiii temp = front;
+                Nodeiii<Integer> temp = front;
                 while(temp.next != null){
                     if(temp.next.priority <= n.priority) {
                         n.next = temp.next;
@@ -40,7 +40,7 @@ public class PRIORITY_QUEUE_DSC {
     public void display(){
         if(front == null && rear == null) System.out.println("EMPTY QUEUE");
         else {
-            Nodeiii temp = front;
+            Nodeiii<Integer> temp = front;
             while(temp!=null){
                 System.out.println(temp.data + "   " + temp.priority);
                 temp = temp.next;
@@ -50,12 +50,12 @@ public class PRIORITY_QUEUE_DSC {
 
     public static void main(String[] args) {
         PRIORITY_QUEUE_DSC obj = new PRIORITY_QUEUE_DSC();
-        obj.enqueue(new Nodeiii(10,3));
-        obj.enqueue(new Nodeiii(20,8));
-        obj.enqueue(new Nodeiii(30,1));
-        obj.enqueue(new Nodeiii(40,7));
-        obj.enqueue(new Nodeiii(60,3));
-        obj.enqueue(new Nodeiii(80,2));
+        obj.enqueue(new Nodeiii<>(10,3));
+        obj.enqueue(new Nodeiii<>(20,8));
+        obj.enqueue(new Nodeiii<>(30,1));
+        obj.enqueue(new Nodeiii<>(40,0));
+        obj.enqueue(new Nodeiii<>(60,3));
+        obj.enqueue(new Nodeiii<>(80,2));
         obj.display();
     }
 }
