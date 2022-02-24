@@ -44,6 +44,6 @@ public class PALINDROME {
         for(int i=0; i<s.length(); i++) obj.push(new Node0(s.charAt(i)));
         for(int i=0; i<s.length(); i++) s1.append(obj.pop());
         if(s1.toString().equals(s)) System.out.println("PALINDROME");
-        else System.out.println("NOT PALINDROME");
+        else System.out.println("NOT  PALINDROME");
     }
 }
