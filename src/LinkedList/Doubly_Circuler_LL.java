@@ -88,6 +88,15 @@ public class Doubly_Circuler_LL {
             temp.next = temp.next.next;
         }
     }
+    public int count(){
+        Nod temp = head;
+        int c=0;
+        while (temp.next != head){
+            c++;
+            temp = temp.next;
+        }
+        return c;
+    }
     public void display(){
         if(head == null) System.out.println("Empty");
         else {
@@ -109,6 +118,7 @@ public class Doubly_Circuler_LL {
         obj.delete_from_end();
         obj.insert_at_any(new Nod(500),3);
         obj.delete_from_any(5);
+        System.out.println(obj.count());
         obj.display();
     }
 }
