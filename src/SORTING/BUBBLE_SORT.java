@@ -22,11 +22,25 @@ package SORTING;
 import java.util.Scanner;
 
 public class BUBBLE_SORT {
+    // Recursive Approach-------->
+    public static void sort(int[] arr, int n){
+        if(n==1) return;
+        for(int i=0; i<n-1; i++){
+            if(arr[i] > arr[i+1]){
+                int temp = arr[i];
+                arr[i] = arr[i+1];
+                arr[i+1] = temp;
+            }
+            sort(arr,n-1);
+        }
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int size = sc.nextInt();
         int[] arr = new int[size];
         for(int i=0; i<size; i++) arr[i] = sc.nextInt();
+
+        // Iterative approach--------->
         for(int i=0; i<arr.length-1; i++){
             for(int j=0; j<arr.length-i-1; j++){
                 if(arr[j]>arr[j+1]){
@@ -36,6 +50,7 @@ public class BUBBLE_SORT {
                 }
             }
         }
+        // sort(arr,arr.length);
         for (int i: arr) System.out.println(i);
     }
 }
