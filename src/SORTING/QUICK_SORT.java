@@ -10,7 +10,7 @@ public class QUICK_SORT {
     }
     public static int partition(int[] arr, int low, int high){
         int pivot = arr[high];
-        int i = low-1;
+        int i = low-1;  /// Index of smaller element and indicates the right position of pivot found so far
         for(int j=low; j<high; j++){
             if(arr[j]<pivot){
                 i++;
@@ -19,10 +19,10 @@ public class QUICK_SORT {
                 arr[j] = temp;
             }
         }
-        // Now, take pivot to the sorted position in the array
+        // Now, take pivot to the sorted position in the array (BY SWAPPING arr[i+1] & arr[high])
         i++;
         int temp = arr[i];
-        arr[i] = pivot;
+        arr[i] = arr[high];
         arr[high] = temp;
         return i; // returning index of pivot
     }
