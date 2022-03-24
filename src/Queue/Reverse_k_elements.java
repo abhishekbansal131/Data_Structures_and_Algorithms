@@ -55,19 +55,19 @@ public class Reverse_k_elements {
             rear = rear.next;
         }
     }
-    public void push(Nodp n){
-        if(top == null) top = n;
-        else{
-            n.next = top;
-            top = n;
-        }
-    }
     public void dequeue(){
         if(front == null && rear == null){
 
         }
         else{
             front = front.next;
+        }
+    }
+    public void push(Nodp n){
+        if(top == null) top = n;
+        else{
+            n.next = top;
+            top = n;
         }
     }
     public int pop(){
@@ -104,6 +104,5 @@ public class Reverse_k_elements {
             obj.insert(new Nodp(sc.nextInt()));
         }
         obj.display(k);
-
     }
 }
