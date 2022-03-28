@@ -6,6 +6,7 @@ import java.util.Queue;
 
 public class LEVEL_ORDER_TREAVERSAL {
     public void levelOrder(Node<Integer> root){
+        if(root == null) return;
         Queue<Node<Integer>> a = new LinkedList<>();
         a.add(root);
         a.add(null);
