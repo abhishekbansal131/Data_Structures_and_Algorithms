@@ -1,8 +1,31 @@
 package TREE;
 import TREE.BINARY_TREE.Binary_Tree;
-
 import java.util.LinkedList;
 import java.util.Queue;
+
+/* NODE CLASS STRUCTURE & BUILDING TREE
+class Node<T>{
+    T data;
+    Node<T> left;
+    Node<T> right;
+
+    public Node(T data) {
+        this.data = data;
+    }
+}
+static class Binary_Tree {
+        int idx = -1;
+
+        public Node<Integer> buildTree(int[] nodes) {
+            idx++;
+            if (nodes[idx] == -1) return null;
+            Node<Integer> newnode = new Node<>(nodes[idx]);
+            newnode.left = buildTree(nodes); // creat left sub-tree
+            newnode.right = buildTree(nodes); // creat right sub-tree
+            return newnode; // returning root node
+        }
+}
+ */
 
 public class LEVEL_ORDER_TREAVERSAL {
     public void levelOrder(Node<Integer> root){
