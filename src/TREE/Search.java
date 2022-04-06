@@ -1,6 +1,9 @@
 package TREE;
 import TREE.BINARY_SEARCH_TREE.BTree;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 /* NODE CLASS STRUCTURE & BUILDING TREE
 class Node<T>{
     T data;
@@ -33,6 +36,19 @@ public class Search {
         }
         else return search(root.right, val);
     }
+    ArrayList<Integer> a = new ArrayList<>();
+    public boolean path(Node<Integer> root, int val){
+        if(root == null) return false;
+        if(root.data == val){
+            a.add(root.data);
+            return true;
+        }
+        a.add(root.data);
+        if(val<root.data) {
+            return path(root.left, val);
+        }
+        else return path(root.right, val);
+    }
     public static void main(String[] args) {
         BTree obj2 = new BTree();
         int[] nodes  = {15,6,18,3,10,12,5};
@@ -40,6 +56,11 @@ public class Search {
         for(int i : nodes)
             root =  obj2.build_tree(root, i);
         Search obj3 = new Search();
-        System.out.println(obj3.search(root, 3));
+        System.out.println(obj3.search(root, 4));
+        if(obj3.path(root,10)) {
+            Collections.reverse(obj3.a);
+            System.out.println(obj3.a);
+        }
+        else System.out.println("Element not found");
     }
 }
