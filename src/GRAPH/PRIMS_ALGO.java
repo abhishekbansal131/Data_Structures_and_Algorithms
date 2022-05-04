@@ -1,5 +1,7 @@
 package GRAPH;
 
+import java.util.Scanner;
+
 public class PRIMS_ALGO {
     public static void prims(int[][] matrix){
         int n = matrix.length;
@@ -35,4 +37,41 @@ public class PRIMS_ALGO {
         }
         return minvertex;
     }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of vertex");
+        int n= sc.nextInt();
+        System.out.println("Enter the number of edges");
+        int e = sc.nextInt();
+        int matrix[][] = new int[n][n];
+        for (int i = 0; i <e; i++) {
+            int v1 = sc.nextInt();
+            int v2 = sc.nextInt();
+            int weight = sc.nextInt();
+            // creation of undirected graph
+            matrix[v1][v2]= weight;
+            matrix[v2][v1] = weight;
+        }
+        prims(matrix);
+    }
 }
+
+    /* prims execution
+    Enter the number of vertex
+        5
+        Enter the number of edges
+        7
+        0 1 4
+        0 2 8
+        1 2 2
+        1 3 6
+        2 3 3
+        2 4 9
+        3 4 5
+// execute the loop from value 1  insted of zero
+//-1   0   0
+        0   1   4
+        1   2   2
+        2   3   3
+        3   4   5
+        */
